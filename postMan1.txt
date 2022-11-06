@@ -1,0 +1,75 @@
+			Intro to pm
+		
+		    creating and deleting
+1.work space
+2.folder
+3.request
+
+		-------------------------------
+
+			variables
+		  
+ {{temp}}
+
+		---------------------------------
+
+		Set variables : 1. global
+				2. local
+
+		----------------------------------
+
+			get request and query param.
+ : {{baseUrl}}/books
+
+http://localhost:3001	
+		----------------------------------
+		
+			post request
+
+
+		---------------------------------
+
+		pre-request script and script
+
+		----------------------------------
+
+			Testing
+	
+ 1.inbuild function 
+ 2.custom function
+
+		---------------------------------
+
+			test case example
+
+task 1: print hello world in console 
+task 2: checking status using build in fun() and custom fun()
+task 3: print pm response in default and json formate
+task 4: adding custom task cases....
+
+		--------------------------------
+
+			Finally Ended...
+
+		-----------------------------------
+
+let x = pm.variables.get("url");
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+
+
+let y = pm.response.json();
+y=y[1];
+pm.test("test passed", function(){
+    if(y.orderId === 100000001) return true
+    else return fasle;
+})
+
+
+
+pm.test("test passed", function(){
+    pm.expect(y.orderId).to.eql(100000001)
+})
+
